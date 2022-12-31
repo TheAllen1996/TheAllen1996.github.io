@@ -1,0 +1,24 @@
+---
+layout: about
+title: About
+permalink: /
+subtitle: <font color=grey> "You can't connect the dots looking forward; you can only connect them looking backward."</font>
+
+profile:
+  align: right
+  image: prof_pic.jpg
+  image_circular: false # crops the image to make it circular
+  address: >
+    <p>Currently in Shanghai</p>
+    <p><nobr>allenjywang [at] tencent.com</nobr></p>
+
+news: true  # includes a list of news items
+selected_papers: false # includes a list of papers marked as "selected={true}"
+social: false # includes social icons at the bottom of the page
+---
+
+Hi there! 
+
+This is Allen. I currently work at Tencent as a game developer. Prior to joining Tencent, I obtained my master degree and bachelor degree, both in Computer Science, from ShanghaiTech University and South China Unversity of Technology, respectively. I am currently interested in Game Design Pattern and Rendering Engine.
+
+In my spare time, I enjoy watching game streaming, reading books, working out, playing video games, and chatting with friends. I am also eager to spend some time in travelling next year, as the pandemic is finally coming to an end.
