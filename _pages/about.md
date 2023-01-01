@@ -9,7 +9,7 @@ profile:
   image: prof_pic.jpg
   image_circular: false # crops the image to make it circular
   address: >
-    <p>Currently in Shanghai</p>
+    <p>Currently in Shanghai</p><br>
     <p><nobr>allenjywang [at] tencent.com</nobr></p>
 
 news: true  # includes a list of news items
