@@ -113,7 +113,7 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 
 blog_name: # blog_name will be displayed in your blog page
 blog_nav_title: Blog # your blog must have a title for it to be displayed in the nav bar
-blog_description: <font color=grey>It is our choices, Harry, that show what we truly are, far more than our abilities.</font>
+blog_description: <font color=grey>You can't connect the dots looking forward. You can only connect them looking backward.</font>
 permalink: /blog/:year/:title/
 
 # Pagination

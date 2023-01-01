@@ -2,7 +2,7 @@
 layout: about
 title: About
 permalink: /
-subtitle: <font color=grey> "You can't connect the dots looking forward; you can only connect them looking backward."</font>
+subtitle: <font color=grey>Always chill. Always exploring.</font>
 
 profile:
   align: right
