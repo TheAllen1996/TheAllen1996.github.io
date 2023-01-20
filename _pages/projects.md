@@ -1,11 +1,11 @@
 ---
 layout: page
-title: Projects
+title: Gallery
 permalink: /projects/
-description:
+description: Some photos about the life.
 nav: true
 nav_order: 2
-display_categories: [Work, Fun]
+display_categories: [On the way ...]
 horizontal: false
 ---
 
