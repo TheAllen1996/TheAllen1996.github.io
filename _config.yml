@@ -286,10 +286,9 @@ external_links:
 imagemagick:
   enabled: true # enables responsive images for your site (recomended, see https://github.com/alshedivat/al-folio/issues/537)
   widths:
-    - 400
-    - 500
-    - 700
     - 900
+    - 1600
+    - 2400
   input_directories:
     - assets/img/
   input_formats:
@@ -298,7 +297,7 @@ imagemagick:
     - ".png"
     - ".tiff"
   output_formats:
-    webp: "-quality 75 -resize 1200x"
+    webp: "-quality 75 -resize 2400x"
 
 # -----------------------------------------------------------------------------
 # Jekyll Diagrams
