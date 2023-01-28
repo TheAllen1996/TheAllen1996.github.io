@@ -292,7 +292,7 @@ imagemagick:
   input_directories:
     - assets/img/
   input_formats:
-    - ".jpg"
+    # - ".jpg"
     - ".jpeg"
     - ".png"
     - ".tiff"
