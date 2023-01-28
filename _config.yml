@@ -284,7 +284,7 @@ external_links:
 # -----------------------------------------------------------------------------
 
 imagemagick:
-  enabled: false # enables responsive images for your site (recomended, see https://github.com/alshedivat/al-folio/issues/537)
+  enabled: true # enables responsive images for your site (recomended, see https://github.com/alshedivat/al-folio/issues/537)
   widths:
     - 480
     - 800
@@ -298,6 +298,8 @@ imagemagick:
     - ".tiff"
   output_formats:
     webp: "-resize 800x"
+  quality:
+    85
 
 # -----------------------------------------------------------------------------
 # Jekyll Diagrams
