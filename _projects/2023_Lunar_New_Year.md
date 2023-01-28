@@ -15,7 +15,7 @@ category: 2023
     <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/travels/FS_lion_dance_02.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
+    <div class="col-sm mt-3 mt-md-0">
         {% include figure.html path="assets/img/travels/FS_red_packet.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
