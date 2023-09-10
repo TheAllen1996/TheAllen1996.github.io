@@ -2,7 +2,7 @@
 layout: page
 title: Gallery
 permalink: /projects/
-description: Some photos about my life. Most photos were taken with iPhone 13 Pro Max without post-processing (except for crop).
+description: Some photos about my life. Always chill. Always exploring.
 nav: true
 nav_order: 2
 display_categories: [2023]

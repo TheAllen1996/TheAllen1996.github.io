@@ -21,11 +21,11 @@ Given one real-vector parameter $$\mathbf{\theta}=[\theta_1,\theta_2,\dots,\thet
 
 $$f_X(x\vert\eta)=h(x)\exp\left(\eta^T T(x)-A(\eta)\right).$$
 
-**Canonical parameter**: $\eta$ is called *canonical*, or *natural parameter* (function), which can be viewed as a transformation of $\mathcal{\theta}$. The set of values of $\eta$ is always convex.
+**Canonical parameter**: $$\eta$$ is called *canonical*, or *natural parameter* (function), which can be viewed as a transformation of $$\mathcal{\theta}$$. The set of values of $$\eta$$ is always convex.
 
-**Sufficient statistic**: Given a data set sampled from $$f_X(x\vert\eta)$$, the sufficient statistic $T(x)$ is a function of the data that holds all information the data set provides with regard to the unknown parameter $\mathbf{\theta}$.
+**Sufficient statistic**: Given a data set sampled from $$f_X(x\vert\eta)$$, the sufficient statistic $$T(x)$$ is a function of the data that holds all information the data set provides with regard to the unknown parameter $$\mathbf{\theta}$$.
 
-**Log-partition function**: $A(\eta)$ is the *log-partition function* to normalize $$f_X(x\vert \eta)$$ to be a probability distribution,
+**Log-partition function**: $$A(\eta)$$ is the *log-partition function* to normalize $$f_X(x\vert \eta)$$ to be a probability distribution,
 
 $$A(\eta)=\log\left(\int_{X}h(x)\exp(\eta^T T(x))\text{d}x\right).$$
 
@@ -37,7 +37,7 @@ Consider the problem of estimating the unknown parameters by *maximum likelihood
 
 $$\mathcal{L}(\eta\vert\mathcal{D})=\log\left(\prod_{i=1}^Nh(x_i)\right)+\eta^T\left(\sum_{i=1}^NT(x_i)\right)-NA(\eta).$$
 
-By *MLE*, we have the estimation $\hat\eta$ when its gradient with respect to $\eta$ is zero:
+By *MLE*, we have the estimation $$\hat\eta$$ when its gradient with respect to $$\eta$$ is zero:
 
 $$\mathcal{L}’(\eta\vert\mathcal{D})=\sum_{i=1}^NT(x_i)-NA’(\eta)=0.$$
 
@@ -45,11 +45,11 @@ Solving the equation, we have
 
 $$A’(\hat\eta)=\frac{1}{N}\sum_{i=1}^NT(x_i),$$
 
-which is the general formula of MLE for the parameters in the exponential family. Further, notice that our formula involves the data only via the sufficient statistic $T(x_i)$. This gives the operational meaning to *sufficiency*—for the purpose of estimating parameters we retain only the sufficient statistic.
+which is the general formula of MLE for the parameters in the exponential family. Further, notice that our formula involves the data only via the sufficient statistic $$T(x_i)$$. This gives the operational meaning to *sufficiency*—for the purpose of estimating parameters we retain only the sufficient statistic.
 
 #  3. Log-partition Function
 
-As we mentioned in section 1, $A(\eta)$ can be viewed as a normalization factor. In fact, $A(\eta)$ is not a degree of freedom in the specification of an exponential family density; it is determined once $T(x)$ and $h(x)$ are determined. The relation between $A(\eta)$ and $T(x)$ can be further characterized by
+As we mentioned in section 1, $$A(\eta)$$ can be viewed as a normalization factor. In fact, $$A(\eta)$$ is not a degree of freedom in the specification of an exponential family density; it is determined once $$T(x)$$ and $$h(x)$$ are determined. The relation between $$A(\eta)$$ and $$T(x)$$ can be further characterized by
 
 $$\begin{aligned}A’(\eta)&=\frac{\text{d}\log\left(\int_{X}h(x)\exp(\eta^T T(x))\text{d}x\right)}{\text{d}\eta}\\&=\frac{\int_{X}h(x)\exp(\eta^T T(x))\cdot  T(x)\text{d}x}{\int_{X}h(x)\exp(\eta^T T(x))\text{d}x}\\&=\frac{\int_{X}h(x)\exp(\eta^T T(x))\cdot T(x)\text{d}x}{\exp({A(\mathbf{\theta})})}\\&=\int_{X}\underbrace{h(x)\exp(\eta^T T(x)-A(\eta))}_{f_X(x\vert \eta)}\cdot T(x)\text{d}x\\&=\mathbb{E}_{f_X(x\vert\eta)}[T(x)].\end{aligned}$$
 
@@ -57,17 +57,17 @@ Further, we have
 
 $$\begin{aligned}A’’(\eta)&=\int_{X}f_X(x\vert \eta)\cdot(T(x)-A’(\eta)) T(x)\text{d}x\\&=\int_{X}f_X(x\vert \eta)\cdot(T(x))^2\text{d}x-A’(\eta)\int_{X}f_X(x\vert \mathbf{\eta})\cdot T(x)\text{d}x\\&=\mathbb{E}_{f_X(x\vert\eta)}[(T(x))^2]-\left(\mathbb{E}_{f_X(x\vert\eta)}[T(x)]\right)^2\\&=var[T(x)],\end{aligned}$$
 
-which also shows that $A(\eta)$ is convex as $var[T(x)]\ge 0$.
+which also shows that $$A(\eta)$$ is convex as $$var[T(x)]\ge 0$$.
 
 # 4. Maximum Entropy
 
-The entropy of $P$ with distribution $p(x)$ supported on $X$ is 
+The entropy of $$P$$ with distribution $$p(x)$$ supported on $$X$$ is 
 
 $$H(P)=\mathbb{E}_{P}[-\log p(x)].$$
 
-The *maximum entropy* principle is that: given some constraints (prior information) about the distribution $P$, we consider all probability distributions satisfying said constraints such that the constraints are being utilized as *objective* as possible, *i.e.,* be as uncertain as possible.
+The *maximum entropy* principle is that: given some constraints (prior information) about the distribution $$P$$, we consider all probability distributions satisfying said constraints such that the constraints are being utilized as *objective* as possible, *i.e.,* be as uncertain as possible.
 
-For example, consider the case where the very constraint is $\sum_Xp(x)=1$, which formulates
+For example, consider the case where the very constraint is $$\sum_Xp(x)=1$$, which formulates
 
 $$\begin{aligned}\max&\quad H(P)\\\text{s.t.}&\quad \sum_{X}p(x)=1.\end{aligned}$$
 
@@ -89,7 +89,7 @@ $$\hat{p}(x_1)=\hat{p}(x_2)=\dots=\hat{p}(x_{\vert X\vert})=\frac{1}{\vert X\ver
 
 *i.e.,* the distribution with maximum entropy is *uniform distribution*.
 
-We now consider a general case where $p(x)$ is continuous with a general constraint $\mathbb{E}_P[\Phi(x)]=\alpha$, where $\Phi(x)=[\phi_1(x),\phi_2(x),\dots,\phi_d(x)]\in\mathbb{R}^d$ and $\alpha=[\alpha_1,\alpha_2,\dots,\alpha_d]\in\mathbb{R}^d$, which formulates
+We now consider a general case where $$p(x)$$ is continuous with a general constraint $$\mathbb{E}_P[\Phi(x)]=\alpha$$, where $$\Phi(x)=[\phi_1(x),\phi_2(x),\dots,\phi_d(x)]\in\mathbb{R}^d$$ and $$\alpha=[\alpha_1,\alpha_2,\dots,\alpha_d]\in\mathbb{R}^d$$, which formulates
 
 $$\begin{aligned}\max&\quad H(P)\\\text{s.t.}&\quad \mathbb{E}_P[\Phi(x)]=\alpha\\\implies\min&\quad \int_Xp(x)\log p(x)\text{d}x\\\text{s.t.}&\quad \int_X p(x)\phi_i(x)\text{d}x=\alpha_i,\ i=1,2,\dots, d,\\&\quad \int_X p(x)\text{d}x=1.\end{aligned}$$
 
@@ -97,11 +97,11 @@ Similarly, we obtain the Lagrangian as
 
 $$L(P,\theta,\lambda)=\int_X p(x)\log p(x)\text{d}x+\sum_{i=1}^d\theta_i\left(\alpha_i-\int_X p(x)\phi_i(x)\text{d}x\right)+\lambda\left(\int_X p(x)\text{d}x-1\right).$$
 
-By treating the density $P=[p(x)]_{x\in X}$ as a finite vector such that $\int_X p(x)\text{d}x$ is similar to $\sum_X p(x)$, we have
+By treating the density $$P=[p(x)]_{x\in X}$$ as a finite vector such that $$\int_X p(x)\text{d}x$$ is similar to $$\sum_X p(x)$$, we have
 
 $$\begin{aligned}\frac{\partial L}{\partial p(x)}&=\frac{\partial }{\partial p(x)}\left(\sum_X p(x)\log p(x)-\sum_{i=1}^d\theta_i\sum_X p(x)\phi_i(x)+\lambda\sum_X p(x)\right)\\&=1+\log p(x)-\sum_{i=1}^d\theta_i\phi_i(x)+\lambda\\&=1+\log p(x)-\theta^T\Phi(x)+\lambda.\end{aligned}$$
 
-Setting the derivation to be zero for all $x$, we have
+Setting the derivation to be zero for all $$x$$, we have
 
 $$p(x)=\exp\left\{\theta^T\Phi(x)-(\lambda+1)\right\},$$
 
@@ -123,7 +123,7 @@ which is in the exponential family form with
 
 $$\begin{aligned}\eta&=\begin{bmatrix}\frac{\mu}{\sigma^2}&-\frac{1}{2\sigma^2}\end{bmatrix}^T,\\T(x)&=\begin{bmatrix}x&x^2\end{bmatrix}^T,\\A(\eta)&=\frac{\mu^2}{2\sigma^2}+\log\sigma=-\frac{\eta_1^2}{4\eta_2}-\frac{1}{2}\log(-2\eta_2),\\h(x)&=\frac{1}{\sqrt{2\pi}}.\end{aligned}$$
 
-$$\tag*{$\blacksquare$}$$
+$$\tag*{$$\blacksquare$$}$$
 
 Then we verify the relation between the sufficient statistic and MLE method.
 
@@ -135,7 +135,7 @@ Solving the equations we have
 
 $$\hat\mu=\frac{1}{N}\sum_{i=1}^Nx_i,\quad \hat\sigma=\frac{1}{N}\sum_{i=1}^Nx_i^2-\hat\mu^2,$$
 
-which is consistent with the result in the [post](https://2ez4ai.github.io/2020/09/28/intro-ml01/). $\tag*{$\blacksquare$}$
+which is consistent with the result in the [post](https://2ez4ai.github.io/2020/09/28/intro-ml01/). $$\tag*{$$\blacksquare$$}$$
 
 Now we show that
 
@@ -153,11 +153,11 @@ and
 
 $$var[x^2]=\mathbb{E}[x^4]-\left(\mathbb{E}[x^2]\right)^2.$$
 
-For $\mathbb{E}[x^2]$, it follows that
+For $$\mathbb{E}[x^2]$$, it follows that
 
 $$\mathbb{E}[x^2]=var[x]+(\mathbb{E}[x])^2=\sigma^2+\mu^2.$$
 
-For $\mathbb{E}[x^4]$, to compute it we leverage *moment generating functions* which follows that
+For $$\mathbb{E}[x^4]$$, to compute it we leverage *moment generating functions* which follows that
 
 $$M_X(t)=e^{\mu t+\frac{1}{2}\sigma^2t^2},\quad \mathbb{E}[x^4]=M^{(4)}_X(0).$$
 
@@ -167,9 +167,9 @@ $$\begin{aligned}var[x^2]&=\mathbb{E}[x^4]-\left(\mathbb{E}[x^2]\right)^2\\&=3\s
 
 Therefore, we have
 
-$$A’’(\hat\eta)=\begin{bmatrix}var[x]\\var[x^2]\end{bmatrix}.\tag*{$\blacksquare$}$$
+$$A’’(\hat\eta)=\begin{bmatrix}var[x]\\var[x^2]\end{bmatrix}.\tag*{$$\blacksquare$$}$$
 
-Finally, we show that $X\sim\mathcal{N}(\mu,\sigma^2)$ is the distribution that maximizes the entropy over all distributions $P$ satisfying
+Finally, we show that $$X\sim\mathcal{N}(\mu,\sigma^2)$$ is the distribution that maximizes the entropy over all distributions $$P$$ satisfying
 
 $$\mathbb{E}_P\left[\left(\frac{X-\mu}{\sigma}\right)^2\right]=1.$$
 
@@ -177,13 +177,13 @@ $$\mathbb{E}_P\left[\left(\frac{X-\mu}{\sigma}\right)^2\right]=1.$$
 
 $$p(x)=\exp\left\{\theta^T\Phi(x)-(\lambda+1)\right\},$$
 
-which maximizes the entropy while satisfying $\mathbb{E}_P[\Phi(x)]=\alpha$. Now letting
+which maximizes the entropy while satisfying $$\mathbb{E}_P[\Phi(x)]=\alpha$$. Now letting
 
 $$\begin{aligned}\alpha&=1,\\\Phi(x)&=\frac{(x-\mu)^2}{\sigma^2},\\\theta&=-\frac{1}{2},\\\exp\{-\lambda-1\}&=\frac{1}{\sqrt{2\pi}\sigma}.\end{aligned}$$
 
 Therefore we have
 
-$$p(x)=\frac{1}{\sqrt{2\pi}\sigma}\exp\left\{-\frac{1}{2\sigma^2}(x-\mu)^2\right\}.\tag*{$\blacksquare$}$$
+$$p(x)=\frac{1}{\sqrt{2\pi}\sigma}\exp\left\{-\frac{1}{2\sigma^2}(x-\mu)^2\right\}.\tag*{$$\blacksquare$$}$$
 
 
 

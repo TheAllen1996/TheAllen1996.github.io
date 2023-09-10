@@ -95,7 +95,7 @@ T(t_x, t_y, t_z)=\begin{bmatrix}1 & 0 & 0 & t_x \\
 								0 & 0 & 0 & 1\end{bmatrix};
 $$
 
-Rotation matrix (rotate counter-clockwise by $\alpha$ degree):
+Rotation matrix (rotate counter-clockwise by $$\alpha$$ degree):
 
 $$
 R_x(\alpha)=\begin{bmatrix} 1 & 0 & 0 & 0 \\
@@ -112,16 +112,16 @@ R_z(\alpha)=\begin{bmatrix} \cos\alpha & -\sin\alpha & 0 & 0 \\
                             0 & 0 & 0 & 1\end{bmatrix}.
 $$
 
-**Example 2.1**: In assignment 1, we are required to render a triangle supporting keyboard input. When the key 'a' and 'd' are pressed, the triangle should be rotated counter-clockwise and clockwise by 10 degrees around $z$-axis, respectively. Therefore we have the model transformation matrix as:
+**Example 2.1**: In assignment 1, we are required to render a triangle supporting keyboard input. When the key 'a' and 'd' are pressed, the triangle should be rotated counter-clockwise and clockwise by 10 degrees around $$z$$-axis, respectively. Therefore we have the model transformation matrix as:
 
 ```
 Matrix model = Identity();
 Update model according to R_z(alpha) defined above;
 ```
 
-**Viewing Transformation**: Transforming all the vertices of the objects in a space where the camera is located at the origin. More specifically, we want the position, gaze direction, and up direction of the camera represents the origin, $-z$-axis, $y$-axis of the new space, respectively. Obviously, it can be done by applying translation (for the origin) and rotation (for the axes). One can derive the transformation matrix by considering its inverse transformation, especially for its rotation matrix. By doing viewing transformation, we can greatly simplify the computation for projection.
+**Viewing Transformation**: Transforming all the vertices of the objects in a space where the camera is located at the origin. More specifically, we want the position, gaze direction, and up direction of the camera represents the origin, $$-z$$-axis, $$y$$-axis of the new space, respectively. Obviously, it can be done by applying translation (for the origin) and rotation (for the axes). One can derive the transformation matrix by considering its inverse transformation, especially for its rotation matrix. By doing viewing transformation, we can greatly simplify the computation for projection.
 
-**Projection Transformation**: Transforming all the vertices of the objects into a normalized device coordinates (NDC) which is $[-1, 1]^3$. By doing so, we can perform projection and clipping more efficiently. For the orthographic projection where all the objects to be projected are in a cuboid space (with top and bottom at $t$ and $b$, left and right at $l$ and $r$, near and far at $n$ and $f$), the transformation matrix to get NDC is given as
+**Projection Transformation**: Transforming all the vertices of the objects into a normalized device coordinates (NDC) which is $$[-1, 1]^3$$. By doing so, we can perform projection and clipping more efficiently. For the orthographic projection where all the objects to be projected are in a cuboid space (with top and bottom at $$t$$ and $$b$$, left and right at $$l$$ and $$r$$, near and far at $$n$$ and $$f$$), the transformation matrix to get NDC is given as
 
 $$
 M_{NDC}=\begin{bmatrix} \frac{2}{r-l} & 0 & 0 & 0 \\
@@ -134,7 +134,7 @@ M_{NDC}=\begin{bmatrix} \frac{2}{r-l} & 0 & 0 & 0 \\
                             0 & 0 & 0 & 1\end{bmatrix}.
 $$
 
-This matrix can be easily derived manually. Then for orthographic projection, we can just drop the $Z$ coordinate to get the projection (but with incorrect aspect ratio). For perspective projection where the parallel lines are not parallel in the image space and the projection space is actually a frustum (can be represented by field of view, aspect ratio, near and far planes), we can firstly squish the frustum into a cuboid and then do the orthographic projection. The squish matrix is given as
+This matrix can be easily derived manually. Then for orthographic projection, we can just drop the $$Z$$ coordinate to get the projection (but with incorrect aspect ratio). For perspective projection where the parallel lines are not parallel in the image space and the projection space is actually a frustum (can be represented by field of view, aspect ratio, near and far planes), we can firstly squish the frustum into a cuboid and then do the orthographic projection. The squish matrix is given as
 
 $$
 M_{persp->ortho} =\begin{bmatrix} n & 0 & 0 & 0 \\
@@ -157,11 +157,11 @@ Set ortho according to M_{NDC} defined above;
 projection = ortho * persp;
 ```
 
-The resulting $Z$ coordinate will not be stored in the image, but are only used in depth buffer in the later stages.
+The resulting $$Z$$ coordinate will not be stored in the image, but are only used in depth buffer in the later stages.
 
 ## 2.2 Viewport Transformation
 
-The projection we obtained from MVP transformation after dropping $Z$ coordinate is in the space $[-1, 1]^2$ with wrong aspect ratio. Viewport transformation helps us to get a correct image on the screen with is $[0, width)\times [0, height)$. 
+The projection we obtained from MVP transformation after dropping $$Z$$ coordinate is in the space $$[-1, 1]^2$$ with wrong aspect ratio. Viewport transformation helps us to get a correct image on the screen with is $$[0, width)\times [0, height)$$. 
 
 **Example 2.3**: In almost all the four assignments, the viewport transformation is done by scaling the coordinates:
 
@@ -180,11 +180,11 @@ Now it is time for rasterization. This is about writing colour values into the f
 <figure>
     <div style="display:flex">
             <figure>
-<img src="../../../../assets/images/Rasterization_point.jpg" alt="Games101"  >
+<img src="../../../../assets/images/Rasterization_point.jpg" width=380 alt="Games101"  >
                 <figcaption><center style="font-size:80%;">(a) Triangle Traversal</center></figcaption>
             </figure>
             <figure>
-<img src="../../../../assets/images/Rasterization_pixel.jpg" alt="Games101" >
+<img src="../../../../assets/images/Rasterization_pixel.jpg" width=380 alt="Games101" >
                 <figcaption><center style="font-size:80%;">(b) Pixel Shading</center></figcaption>
             </figure>
     </div>
@@ -197,7 +197,7 @@ Figure 3. Rasterization
 
 ## 3.1 Triangle Traversal
 
-After viewport transformation, we got a projection of $[0, width)\times [0, height)$ to be rendered on the screen with $width \times height$ pixels. For each triangle, we need to traverse all the pixels to determine whether they are in the triangle or not. Together with depth information, each pixel then be referred as a point in a single triangle, and will be shaded based on the information of the triangle. We can leverage cross product to determine whether a point is inside a triangle or not:
+After viewport transformation, we got a projection of $$[0, width)\times [0, height)$$ to be rendered on the screen with $$width \times height$$ pixels. For each triangle, we need to traverse all the pixels to determine whether they are in the triangle or not. Together with depth information, each pixel then be referred as a point in a single triangle, and will be shaded based on the information of the triangle. We can leverage cross product to determine whether a point is inside a triangle or not:
 
 **Example 3.1**: In assignment 2, we are required to draw two triangles on the screen. The implementation for inside check can be done as follows:
 
@@ -229,9 +229,9 @@ After the triangle traversal, we refer each pixel as a point inside a triangle. 
 
 **Interpolation**: The formal definition of interpolation can be found everywhere. Here I just want to explain it in an intuitive way: interpolation is getting new data based on known data on the same space. The key of (linear) interpolation is finding something like weights that describe the contribution of known data to the new data so that the transition from the constructed new data to known data can be smooth. In our case for triangles, we often use Barycentric coordinates to describe the contribution of each vertex to the new data.
 
-**Barycentric Coordinates**: For every point $(x, y)$ inside a triangle ABC, we can find a corresponding coordinate $(\alpha, \beta, \gamma), \alpha,\beta,\gamma \ge 0$ and $\alpha+\beta+\gamma=1$. 
+**Barycentric Coordinates**: For every point $$(x, y)$$ inside a triangle ABC, we can find a corresponding coordinate $$(\alpha, \beta, \gamma), \alpha,\beta,\gamma \ge 0$$ and $$\alpha+\beta+\gamma=1$$. 
 
-<div align="center"><img src="../../../../assets/images/Barycentric.jpg" alt="Games101" />
+<div align="center"><img src="../../../../assets/images/Barycentric.jpg" width=750 alt="Games101" />
 </div>
 
 <center>
@@ -258,16 +258,16 @@ void rasterize_triangle(Triangle t):
                 frame_buffer[w, h] = color;
 ```
 
-As colour of each triangle in assignment 2 is specified, the rendering result on $700\times 700$ pixels would be like:
+As colour of each triangle in assignment 2 is specified, the rendering result on $$700\times 700$$ pixels would be like:
 
 <figure>
     <div style="display:flex">
             <figure>
-<img src="../../../../assets/images/Rasterization.png" alt="Code" width="280" height="280">
+<img src="../../../../assets/images/Rasterization.png" alt="Code" width="380">
                 <figcaption><center style="font-size:80%;">(a) Rendering Result </center></figcaption>
             </figure>
             <figure>
-<img src="../../../../assets/images/Rasterization_300.jpg" alt="Code" width="280" height="280">
+<img src="../../../../assets/images/Rasterization_300.jpg" alt="Code" width="380">
                 <figcaption><center style="font-size:80%;">(b) Zoom In</center></figcaption>
             </figure>
     </div>
@@ -280,16 +280,16 @@ Figure 5. Rasterization of Assignment 2
 
 Notice that there are many jaggies along the edge of the right triangle. That is because each pixel itself is a square and we shade it in a binary way: the colour of it can only be green/blue or black. To remove the jaggies, we should allow each pixel to be shaded in varying colours so that the transition from colourful pixels to black ones can be more smooth. Again, interpolation plays an important role here, but in a different way.
 
-**Multi-Sampling Anti-Aliasing (MSAA)**: In the previous triangle traversal, we traverse each pixel and shade the pixel based on the middle point of the pixel as shown in Fig 6 (a). Therefore for those pixels whose majority part is outside the triangle, the colour will be biased.  In MSAA, instead of setting the colour of each pixel based on the middle point, we set it based on $N\times N$ points inside the pixel. A $2\times 2$ example is shown in Fig 6 (b). We divide each pixel into four equal parts, and traverse each sub-pixel. The final colour of a pixel will be the average colour of its four sub-pixels.
+**Multi-Sampling Anti-Aliasing (MSAA)**: In the previous triangle traversal, we traverse each pixel and shade the pixel based on the middle point of the pixel as shown in Fig 6 (a). Therefore for those pixels whose majority part is outside the triangle, the colour will be biased.  In MSAA, instead of setting the colour of each pixel based on the middle point, we set it based on $$N\times N$$ points inside the pixel. A $$2\times 2$$ example is shown in Fig 6 (b). We divide each pixel into four equal parts, and traverse each sub-pixel. The final colour of a pixel will be the average colour of its four sub-pixels.
 
 <figure>
     <div style="display:flex">
             <figure>
-<img src="../../../../assets/images/MSAA_eg.jpg" alt="Games 101">
+<img src="../../../../assets/images/MSAA_eg.jpg" width=380 alt="Games 101">
                 <figcaption><center style="font-size:80%;">(a) Triangle Traversal Per Pixel</center></figcaption>
             </figure>
             <figure>
-<img src="../../../../assets/images/MSAA_eg1.jpg" alt="Games 101">
+<img src="../../../../assets/images/MSAA_eg1.jpg" width=380 alt="Games 101">
                 <figcaption><center style="font-size:80%;">(b) Triangle Traversal Per Sub-pixel</center></figcaption>
             </figure>
     </div>
@@ -323,11 +323,11 @@ The rendering result with MSAA is shown in Fig 7. In MSAA, we need to maintain a
 <figure>
     <div style="display:flex">
             <figure>
-<img src="../../../../assets/images/MSAA.png" alt="Code" width="280" height="280">
+<img src="../../../../assets/images/MSAA.png" alt="Code" width=380>
                 <figcaption><center style="font-size:80%;">(a) Rendering Result </center></figcaption>
             </figure>
             <figure>
-<img src="../../../../assets/images/MSAA_300.jpg" alt="Code" width="280" height="280">
+<img src="../../../../assets/images/MSAA_300.jpg" alt="Code" width=380>
                 <figcaption><center style="font-size:80%;">(b) Zoom In</center></figcaption>
             </figure>
     </div>
@@ -343,11 +343,11 @@ All the examples we provide above do not require a specific shading inside a tri
 <figure>
     <div style="display:flex">
             <figure>
-<img src="../../../../assets/images/normal.png" alt="Code" >
+<img src="../../../../assets/images/normal.png" alt="Code" width=380>
                 <figcaption><center style="font-size:80%;">(a) Normal Shader</center></figcaption>
             </figure>
             <figure>
-<img src="../../../../assets/images/phong.png" alt="Code" >
+<img src="../../../../assets/images/phong.png" alt="Code" width=380>
                 <figcaption><center style="font-size:80%;">(b) Blinn-Phong Shader</center></figcaption>
             </figure>
     </div>
@@ -355,11 +355,11 @@ All the examples we provide above do not require a specific shading inside a tri
 <figure>
     <div style="display:flex">
             <figure>
-<img src="../../../../assets/images/texture.png" alt="Code" >
+<img src="../../../../assets/images/texture.png" alt="Code" width=380>
                 <figcaption><center style="font-size:80%;"> (c) Texture Shader</center></figcaption>
             </figure>
             <figure>
-<img src="../../../../assets/images/texture_bilinear.png" alt="Code" >
+<img src="../../../../assets/images/texture_bilinear.png" alt="Code" width=380>
                 <figcaption><center style="font-size:80%;">(d) Binlinear Texture Shader</center></figcaption>
             </figure>
     </div>
@@ -392,7 +392,7 @@ void rasterize_triangle(Triangle t):
                 frame_buffer[w, h] = color;
 ```
 
-The rendering result is shown Fig 8 (a). The blue part indicates the triangles on that part are generally perpendicular to the view ray, and their normal is more like ${0, 0, 1}$, which hence makes them more blue. The normal information can also be obtained from normal map. It is very common to use normal map to trick human eyes that there are a great many surface details. (See bump shader and displacment shader.)
+The rendering result is shown Fig 8 (a). The blue part indicates the triangles on that part are generally perpendicular to the view ray, and their normal is more like $${0, 0, 1}$$, which hence makes them more blue. The normal information can also be obtained from normal map. It is very common to use normal map to trick human eyes that there are a great many surface details. (See bump shader and displacment shader.)
 
 **Blinn-Phong Shader**: Blinn-Phong shader is based on Blinn-Phong reflectance model. It allows us to take lights into consideration without bringing in too much computation cost. In Blinn-Phong reflectance model, the reflection consists of Lambertian Diffuse, Blinn-Phong Specular, and Ambient. Intuitively, Lambertian diffuse assumes the shading is independent of the view direction, and the ray direction will only affect the intensity of the light. Blinn-Phong specular assumes the view direction will also affect the light intensity at the shading point, and the closer the view direction is to the mirror direction of the ray direction, the higher the intensity at the point. Ambient can be viewed as a constant to simulate the whole environmental reflectance.
 
@@ -425,7 +425,7 @@ Vector3f blinn_phong_shader(Fragment_Shader_Payload payload):
 
 The rendering result is shown Fig 8 (b). As we can see, the image now can show us the reflectance, which makes it more realistic.
 
-**Texture Shader**: Now consider that we want to have colourful patterns rather than normal or reflectance. One way to specify the colour is by using texture map. Texture shader is usually the same as the Blinn-Phong shader. The only difference is that the parameter $k_d$ for Lambertian diffuse is replaced by the one extracted from a texture map.
+**Texture Shader**: Now consider that we want to have colourful patterns rather than normal or reflectance. One way to specify the colour is by using texture map. Texture shader is usually the same as the Blinn-Phong shader. The only difference is that the parameter $$k_d$$ for Lambertian diffuse is replaced by the one extracted from a texture map.
 
 **Example 3.6**: In assignment 3, we are required to implement a Texture shader. It can be done by modifying Blinn-Phong shader as follows:
 
@@ -445,7 +445,7 @@ Vector3f texture_shader(Fragment_Shader_Payload payload):
 
 The rendering result is shown in Fig 8 (c). However, if we zoom in the resulting image, we can tell that there are jaggies again in the result. Instead of using MSAA, we can use Bilinear interpolation here to remove jaggies. The idea of Bilinear interpolation is shown in Fig 9. It is trying to get an averaging colour so that the transition from one pixel to the other can be as smooth as possible. The rendering result of Bilinear interpolation is shown in Fig 8 (d).
 
-<div align="center"><img src="../../../../assets/images/Bilinear.jpg" alt="Games101" />
+<div align="center"><img src="../../../../assets/images/Bilinear.jpg" width=750 alt="Games101" />
 </div>
 
 <center>
