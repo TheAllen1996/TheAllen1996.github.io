@@ -19,6 +19,6 @@ social: false # includes social icons at the bottom of the page
 
 Hi there! 
 
-This is Allen. I currently work at Tencent as a game developer. Prior to joining Tencent, I obtained my master degree and bachelor degree, both in Computer Science, from ShanghaiTech University and South China University of Technology, respectively. I am currently interested in a variety of practical game-related AI techniques, such as computer graphics, reinforcement learning agents, etc.
+This is Allen. I currently work at Tencent as a game developer. Prior to joining Tencent, I obtained my master degree and bachelor degree, both in Computer Science, from ShanghaiTech University and South China University of Technology, respectively. I am currently interested in a variety of practical game-related techniques, such as computer graphics, reinforcement learning agents, etc.
 
 In my spare time, I enjoy watching game streams, reading books, working out, cooking, and chatting with friends. I used to play various games extensively during my childhood. Now I'm still a big fan of games, but more as a designer and developer, rather than just as a player.
