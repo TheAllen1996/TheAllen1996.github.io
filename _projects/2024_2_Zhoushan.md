@@ -9,7 +9,7 @@ index: 2
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/travels/Zhoushan/Zhoushan_1127.JPG" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/travels/Zhoushan/Zhoushan_1127.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -42,7 +42,7 @@ index: 2
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/travels/Zhoushan/Zhoushan_1450.JPG" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/travels/Zhoushan/Zhoushan_1450.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -51,7 +51,7 @@ index: 2
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/travels/Zhoushan/Zhoushan_1505.JPG" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/travels/Zhoushan/Zhoushan_1505.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -84,7 +84,7 @@ index: 2
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/travels/Zhoushan/Zhoushan_1754.JPG" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/travels/Zhoushan/Zhoushan_1754.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">

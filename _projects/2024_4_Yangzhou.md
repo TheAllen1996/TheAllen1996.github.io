@@ -2,7 +2,7 @@
 layout: page
 title: Yangzhou, but in June
 description: June, 2024 · Chinese Garden.
-img: assets/img/travels/Yangzhou/Yangzhou_Cover.jpg
+img: assets/img/travels/Yangzhou/Yangzhou_Cover.JPG
 category: 2024
 index: 4
 ---
@@ -27,7 +27,7 @@ As I mentioned in earlier posts, people in Shanghai tend to leave the city for v
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/travels/Yangzhou/Yangzhou_PJ.jpg" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/travels/Yangzhou/Yangzhou_PJ.JPG" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -50,10 +50,10 @@ As I mentioned in earlier posts, people in Shanghai tend to leave the city for v
 
 <div class="row justify-content-sm-center">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/travels/Yangzhou/Yangzhou_JianZhen1.JPG" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/travels/Yangzhou/Yangzhou_JianZhen1.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/travels/Yangzhou/Yangzhou_JianZhen2.JPG" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/travels/Yangzhou/Yangzhou_JianZhen2.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -62,10 +62,10 @@ As I mentioned in earlier posts, people in Shanghai tend to leave the city for v
 
 <div class="row">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/travels/Yangzhou/Yangzhou_Temple2.JPG" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/travels/Yangzhou/Yangzhou_Temple2.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/travels/Yangzhou/Yangzhou_Temple3.JPG" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/travels/Yangzhou/Yangzhou_Temple3.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
@@ -83,10 +83,10 @@ As I mentioned in earlier posts, people in Shanghai tend to leave the city for v
 
 <div class="row justify-content-sm-center">
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/travels/Yangzhou/Yangzhou_Heyuan1.JPG" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/travels/Yangzhou/Yangzhou_Heyuan1.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
     <div class="col-sm mt-3 mt-md-0">
-        {% include figure.html path="assets/img/travels/Yangzhou/Yangzhou_Heyuan2.JPG" class="img-fluid rounded z-depth-1" %}
+        {% include figure.html path="assets/img/travels/Yangzhou/Yangzhou_Heyuan2.jpg" class="img-fluid rounded z-depth-1" %}
     </div>
 </div>
 <div class="caption">
